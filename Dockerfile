@@ -4,4 +4,10 @@ RUN apt-get update \
         gcc \
         g++ \
         make \
-    && rm -rf /var/lib/apt/lists/*
+        git \
+    && rm -rf /var/lib/apt/lists/* \
+    && git clone git://github.com/imathis/octopress.git /srv/octopress \
+
+WORKDIR /srv/app/octopress
+RUN gem install bundle \
+    && bundle install
