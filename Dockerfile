@@ -6,7 +6,7 @@ RUN apt-get update \
         make \
         git \
     && rm -rf /var/lib/apt/lists/* \
-    && git clone git://github.com/imathis/octopress.git /srv/octopress \
+    && git clone git://github.com/imathis/octopress.git /srv/octopress
 
 WORKDIR /srv/app/octopress
 RUN gem install bundle \
